@@ -23,7 +23,7 @@ responses = {
     "hi": "How can I assist you? What disease are you suffering from?",
     "fever": "A simple remedy for fever is ginger and honey tea...",
     "cough": "A simple remedy for cough is to drink warm honey and ginger tea...",
-    "headache": "Drink plenty of water, apply a cold compress...",  # 🔥 Comma was missing here!
+    "headache": "Drink plenty of water, apply a cold compress...",  
     "cold": "Inhale steam with eucalyptus oil, drink warm fluids...",
     "throat infection": "Gargle with warm salt water...",
     "indigestion": "Drink warm water with a pinch of baking soda..."
@@ -38,7 +38,7 @@ def home():
 @app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json.get("message", "").lower()
-    bot_response = responses.get(user_message, "Sorry, I don't understand. Please try again.")  # 🔥 Fixed KeyError
+    bot_response = responses.get(user_message, "Sorry, I don't understand. Please try again.")  
     return jsonify({"response": bot_response})
 
 # User Registration
